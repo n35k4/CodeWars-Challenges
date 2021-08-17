@@ -8,8 +8,12 @@ Solutions for different katas with SWIFT !
 ## 7kyu
 
 
-## 8kyu
+# 8kyu
 All [8kyu] Solutions <br />
+
+## Array Katas
+> Only Array Katas
+
 ### [8kyu] Sum Mixed Array - Swift Solution
 >Given an array of integers as strings and numbers, return the sum of the array values as if all were numbers. <br />
 >Return your answer as a number. <br />
@@ -59,4 +63,5 @@ func getAverage(_ marks: [Int]) -> Int {
     marks.reduce(0) {($0 + $1)} / marks.count
 }
 ```
-
+## Strings
+> Only String Katas
