@@ -9,10 +9,10 @@ Solutions for different katas with SWIFT !
 
 
 ## 8kyu
-All [8kyu] Solutions </ br>
-###[8kyu] Sum Mixed Array - Swift Solution
->Given an array of integers as strings and numbers, return the sum of the array values as if all were numbers.
->Return your answer as a number.
+All [8kyu] Solutions <br />
+### [8kyu] Sum Mixed Array - Swift Solution
+>Given an array of integers as strings and numbers, return the sum of the array values as if all were numbers. <br />
+>Return your answer as a number. <br />
 >https://www.codewars.com/kata/57eaeb9578748ff92a000009
 ```swift
 // Solution1
@@ -43,4 +43,20 @@ unc sumMix(_ arr: [Any]) -> Int {
 }
 ```
 
+### [8kyu] Get the mean of an array - Swift Solution
+>It's the academic year's end, fateful moment of your school report. The averages must be calculated. All the students come to you and entreat you to calculate their average for them. Easy ! You just need to write a script. <br />
+>Return the average of the given array rounded down to its nearest integer. <br />
+>The array will never be empty. <br />
+>https://www.codewars.com/kata/563e320cee5dddcf77000158/swift
+```swift
+// Solution1
+func getAverage(_ marks: [Int]) -> Int { 
+    return marks.reduce(0, +) / marks.count
+}
+
+// Solution2
+func getAverage(_ marks: [Int]) -> Int {
+    marks.reduce(0) {($0 + $1)} / marks.count
+}
+```
 
