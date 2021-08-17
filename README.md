@@ -2,14 +2,14 @@
 Solutions for different katas with SWIFT !
 
 
-##6kyu
+## 6kyu
 
 
-##7kyu
+## 7kyu
 
 
-##8kyu
-All [8kyu] Solutions
+## 8kyu
+All [8kyu] Solutions </ br>
 ###[8kyu] Sum Mixed Array - Swift Solution
 >Given an array of integers as strings and numbers, return the sum of the array values as if all were numbers.
 >Return your answer as a number.
