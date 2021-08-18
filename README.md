@@ -2,17 +2,49 @@
 Solutions for different katas with SWIFT !
 
 
-## 6kyu
+# [6kyu]
+All [6kyu] Solutions <br />
 
+## [6kyu] Array Katas
 
-## 7kyu
+## [6kyu] String Katas
 
+### [6kyu] CamelCase Method
+>Write a simple camelCase function for strings. All words must have their first letter capitalized and all spaces removed.
+>https://www.codewars.com/kata/587731fda577b3d1b0001196
+```swift
+// Solution1
+func camelCase(_ str: String) -> String {
+  return str.capitalized.replacingOccurrences(of: " ", with: "")
+}
 
-# 8kyu
+//Solution2
+func camelCase(_ str: String) -> String {
+  return str.capitalized.split(separator: " ").joined()
+}
+
+//Solution3
+func camelCase(_ str: String) -> String {
+    var test = [String]()
+    let items = str.components(separatedBy: " ")
+    for item in items {
+        test.append(item.capitalized)
+    }
+    return test.joined()
+}
+```
+
+# [7kyu]
+
+## [7kyu] Array Katas
+
+## [7kyu] String Katas
+
+# [8kyu]
 All [8kyu] Solutions <br />
 
-## Array Katas
-> Only Array Katas
+## [8kyu] Array Katas
+> List with all [8kyu] Array katas
 
 ### [8kyu] Sum Mixed Array - Swift Solution
 >Given an array of integers as strings and numbers, return the sum of the array values as if all were numbers. <br />
