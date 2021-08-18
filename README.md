@@ -25,12 +25,12 @@ func camelCase(_ str: String) -> String {
 
 //Solution3
 func camelCase(_ str: String) -> String {
-    var test = [String]()
+    var caCase = [String]()
     let items = str.components(separatedBy: " ")
     for item in items {
-        test.append(item.capitalized)
+        caCase.append(item.capitalized)
     }
-    return test.joined()
+    return caCase.joined()
 }
 ```
 
