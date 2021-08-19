@@ -38,6 +38,37 @@ func camelCase(_ str: String) -> String {
 
 ## [7kyu] Array Katas
 
+### [6kyu] CamelCase Method
+>Create a function oddOne that takes an [Int] as input and outputs the index at which the sole odd number is located.
+>This method should work with arrays with negative numbers. If there are no odd numbers in the array, then the method should output nil.
+>Examples:
+```swift
+oddOne([2,4,6,7,10]) // => 3
+oddOne([2,16,98,10,13,78]) // => 4
+oddOne([4,-8,98,-12,-7,90,100]) // => 4
+oddOne([2,4,6,8]) // => nil
+
+```
+>https://www.codewars.com/kata/587731fda577b3d1b0001196
+```swift
+// Solution1
+func oddOne(_ arr: [Int]) -> Int? {
+  return arr.firstIndex { $0 % 2 != 0 }
+}
+
+// Solution2
+func oddOne(_ arr: [Int]) -> Int? {
+    for ar in arr {
+        if ar % 2 == 0 {
+            continue
+        }
+        return arr.firstIndex(of: ar)
+    }
+    return nil
+}
+```
+
+
 ## [7kyu] String Katas
 
 # [8kyu]
