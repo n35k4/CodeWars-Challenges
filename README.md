@@ -9,7 +9,7 @@ All [6kyu] Solutions <br />
 
 ## [6kyu] String Katas
 
-### [7kyu] Odder Than the Rest - Swift Solution
+### [6kyu] CamelCase Method - Swift Solution
 >Write a simple camelCase function for strings. All words must have their first letter capitalized and all spaces removed.
 >https://www.codewars.com/kata/587731fda577b3d1b0001196
 ```swift
@@ -38,7 +38,7 @@ func camelCase(_ str: String) -> String {
 
 ## [7kyu] Array Katas
 
-### [6kyu] CamelCase Method - Swift Solution
+### [7kyu] Odder Than the Rest - Swift Solution
 >Create a function oddOne that takes an [Int] as input and outputs the index at which the sole odd number is located.
 >This method should work with arrays with negative numbers. If there are no odd numbers in the array, then the method should output nil.
 >Examples:
