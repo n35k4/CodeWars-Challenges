@@ -91,6 +91,8 @@ All [6kyu] Solutions <br />
 ## [6kyu] String Katas
 
 ### [6kyu] Write Number in Expanded Form - Swift Solution
+> You will be given a number and you will need to return it as a string in Expanded Form. <br />
+> https://www.codewars.com/kata/5842df8ccbd22792a4000245/swift <br />
 ```swift
 // Solution 1
 func expandedForm(_ num: Int) -> String {
