@@ -2,7 +2,7 @@
 Solutions for different katas with SWIFT !
 
 # [5kyu]
-All [6kyu] Solutions <br />
+All [5kyu] Solutions <br />
 
 ## [5kyu] Array Katas
 
@@ -10,7 +10,7 @@ All [6kyu] Solutions <br />
 
 ## [5kyu] Integer Katas
 
-### [5kyu] Integers: Recreation One
+### [5kyu] Integers: Recreation One - Swift Solution
 > Find all integers between m and n (m and n integers with 1 <= m <= n) such that the sum of their squared divisors is itself a square. <br />
 > We will return an array of subarrays or of tuples (in C an array of Pair) or a string. The subarrays (or tuples or Pairs) will have two elements: first the number the squared divisors of which is a square and then the sum of the squared divisors. <br />
 > https://www.codewars.com/kata/55aa075506463dac6600010d/swift
@@ -81,7 +81,7 @@ func listSquared(_ m: Int, _ n: Int) -> [(Int, Int)] {
 }
 ```
 
-
+<br />
 
 # [6kyu]
 All [6kyu] Solutions <br />
@@ -89,6 +89,34 @@ All [6kyu] Solutions <br />
 ## [6kyu] Array Katas
 
 ## [6kyu] String Katas
+
+### [6kyu] Write Number in Expanded Form - Swift Solution
+```swift
+// Solution 1
+func expandedForm(_ num: Int) -> String {
+  let array = String(num).flatMap{ Int(String($0)) }
+    var count = array.count
+    let result = array.map({ (number) -> String in
+        count -= 1
+        return String(number * Int(pow(10.0,Double(count))))
+    }).filter({ $0 != "0" }).joined(separator: " + ")
+    return result
+}
+
+// Solution 2 *Best practice*
+func expandedForm(_ num: Int) -> String {
+    let digits = String(num).characters
+    let maxZeros = digits.count - 1
+    
+    let parts = digits
+        .enumerated()
+        .filter { $0.element != "0" }
+        .map { String($0.element) + String(repeating: "0", count: maxZeros - $0.offset) }
+    
+    return parts.joined(separator: " + ")
+}
+
+```
 
 ### [6kyu] CamelCase Method - Swift Solution
 >Write a simple camelCase function for strings. All words must have their first letter capitalized and all spaces removed.
