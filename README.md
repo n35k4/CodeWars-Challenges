@@ -1,6 +1,87 @@
 # CodeWars-Challenges
 Solutions for different katas with SWIFT !
 
+# [5kyu]
+All [6kyu] Solutions <br />
+
+## [5kyu] Array Katas
+
+## [5kyu] String Katas
+
+## [5kyu] Integer Katas
+
+### [5kyu] Integers: Recreation One
+> Find all integers between m and n (m and n integers with 1 <= m <= n) such that the sum of their squared divisors is itself a square. <br />
+> We will return an array of subarrays or of tuples (in C an array of Pair) or a string. The subarrays (or tuples or Pairs) will have two elements: first the number the squared divisors of which is a square and then the sum of the squared divisors. <br />
+> https://www.codewars.com/kata/55aa075506463dac6600010d/swift
+```swift
+// Solution 1 
+func listSquared(_ m: Int, _ n: Int) -> [(Int, Int)] {
+  return (m...n).flatMap { (val) -> (Int, Int)? in
+    let divisors = (1...(Int(sqrt(Double(val)))))
+      .flatMap({val % $0 == 0 ? [$0, val / $0] : []})
+    let sum = Array(Set(divisors)).reduce(0, {$0 + ($1 * $1)})
+    if sqrt(Double(sum)).truncatingRemainder(dividingBy: 1) == 0 {
+      return (val, sum)
+    }
+    return nil
+  }
+}
+
+
+// Solution 2
+func getDivisors(_ x:Int) -> [Int] {
+    let sqr = sqrt(Double(x))
+    var list = [Int]()
+    for i in 1..<Int(sqr)+1 {
+        if x % i == 0 {
+            list.append(i)
+            if i != (x/i) {
+                list.append((x/i))
+            }
+        }
+    }
+    return list
+}
+
+func numberIsSquare(_ x: Int) -> Bool {
+    return Int(sqrt(Double(x))) * Int(sqrt(Double(x))) == x
+}
+
+func listSquared(_ m: Int, _ n: Int) -> [(Int, Int)] {
+    var list = [(Int, Int)]()
+    for value in m ... n{
+        let sumOfDivisors = getDivisors(value).map{$0 * $0}.reduce(0, +)
+        if numberIsSquare(sumOfDivisors){
+            list.append((value, sumOfDivisors))
+        }
+    }
+    return list
+}
+
+// Solution 3
+func listSquared(_ m: Int, _ n: Int) -> [(Int, Int)] {
+    var returnedArray: [(Int, Int)] = []
+    for value in m...n {
+        
+        var divisors: [Int] = []
+        for divisor in 1...value {
+            if value % divisor == 0 {
+                divisors.append(divisor)
+            }
+        }
+        
+        let sumOfSquaresOfDivisors = divisors.map { $0 * $0 }.reduce(0, +)
+        if Double(sumOfSquaresOfDivisors).squareRoot().truncatingRemainder(dividingBy: 1.0) == 0 {
+            returnedArray.append((value, sumOfSquaresOfDivisors))
+        }
+    }
+    
+    return returnedArray
+}
+```
+
+
 
 # [6kyu]
 All [6kyu] Solutions <br />
