@@ -1,5 +1,6 @@
 # CodeWars-Challenges
-Solutions for different katas with SWIFT !
+Solutions for different katas with SWIFT.
+<< Soon will have start to update new in C# >>
 
 # [5kyu]
 All [5kyu] Solutions <br />
